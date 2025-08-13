@@ -1,6 +1,35 @@
-<section class="section">
+<!-- <section class="section">
   <h2>About Us</h2>
   <p>Our trust works to empower underprivileged children through education, healthcare, and nourishment. We work with local communities to create long-term impact.</p>
+</section>
+
+<div class="contact-form">
+  <h2>Contact Us</h2>
+  <form (ngSubmit)="submitForm()" #form="ngForm">
+    <input type="text" placeholder="Your Name" [(ngModel)]="name" name="name" required>
+    <input type="email" placeholder="Your Email" [(ngModel)]="email" name="email" required>
+    <textarea placeholder="Your Message" [(ngModel)]="message" name="message" required></textarea>
+    <button type="submit" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Sending...' : 'Send' }}
+    </button>
+  </form>
+  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+</div> -->
+
+
+<section class="section about-us">
+  <div class="about-content">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        Our trust works to empower underprivileged children through education, healthcare, and nourishment.
+        We work with local communities to create long-term impact.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="assets/asset_8.png" alt="Helping children">
+    </div>
+  </div>
 </section>
 
 <div class="contact-form">

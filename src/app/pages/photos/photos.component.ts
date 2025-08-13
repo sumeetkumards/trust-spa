@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class PhotosComponent implements OnInit {
 
   images = [
-    'assets/photo1.jpg',
-    'assets/photo2.jpg',
-    'assets/photo3.jpg'
+    'assets/asset_4.png',
+    'assets/asset_7.png',
+    'assets/asset_6.png'
   ];
 
   constructor() { }

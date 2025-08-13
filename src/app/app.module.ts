@@ -11,7 +11,6 @@ import { AchievementsComponent } from './pages/achievements/achievements.compone
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { HeaderComponent } from './header/header/header.component';
     AboutUsComponent,
     PhotosComponent,
     AchievementsComponent,
-    NavbarComponent,
-    HeaderComponent
+    NavbarComponent
   ],
   imports: [
     BrowserAnimationsModule,
