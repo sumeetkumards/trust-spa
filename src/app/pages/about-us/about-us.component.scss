@@ -1,0 +1,32 @@
+.contact-form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #e68900;
+    }
+  }
+
+  .success {
+    color: green;
+    text-align: center;
+  }
+}
