@@ -1,29 +1,43 @@
-<!-- <section class="section">
-  <h2>About Us</h2>
-  <p>Our trust works to empower underprivileged children through education, healthcare, and nourishment. We work with local communities to create long-term impact.</p>
-</section>
-
-<div class="contact-form">
-  <h2>Contact Us</h2>
-  <form (ngSubmit)="submitForm()" #form="ngForm">
-    <input type="text" placeholder="Your Name" [(ngModel)]="name" name="name" required>
-    <input type="email" placeholder="Your Email" [(ngModel)]="email" name="email" required>
-    <textarea placeholder="Your Message" [(ngModel)]="message" name="message" required></textarea>
-    <button type="submit" [disabled]="isSubmitting">
-      {{ isSubmitting ? 'Sending...' : 'Send' }}
-    </button>
-  </form>
-  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
-</div> -->
-
-
 <section class="section about-us">
   <div class="about-content">
     <div class="about-text">
-      <h2>About Us</h2>
+      <h2>About Us - Our Story</h2>
       <p>
-        Our trust works to empower underprivileged children through education, healthcare, and nourishment.
-        We work with local communities to create long-term impact.
+        Founded by Shashi Prabha Singh and Dimple Singh, our trust was born from a simple belief — education has the
+        power to break the cycle of poverty.
+        In a world where opportunities often favor the privileged, we stand for those who are overlooked,
+        underestimated, or underserved. We work closely with communities, schools, and families to:
+        Sponsor education for children from poor and lower-middle-class backgrounds.
+        Provide scholarships and financial aid to bright students who need support.
+        Offer skill development programs that prepare youth for employment.
+        Guide parents and students with career counseling and mentorship.
+        Our mission is simple yet profound: no talent should go unrecognized, no dream should go unfulfilled — just
+        because of money.
+      </p>
+      <ul>
+        <li>
+          <strong>💡 Our Mission</strong>
+          <p>To provide accessible, quality education and skill development opportunities for economically weaker
+            sections, empowering them to build a better future.
+          </p>
+        </li>
+        <li>
+          <strong>🎯 Our Vision</strong>
+          <p>A society where every individual, regardless of their financial background, has the tools, knowledge, and
+            confidence to succeed.</p>
+        </li>
+        <li>
+          <strong>✨ Get Involved</strong>
+          <p>Together, we can change lives. You can support our mission by:</p>
+        </li>
+
+      </ul>
+      <p>
+        Sponsoring a child’s education
+        Donating for scholarships & resources
+        Volunteering your time and expertise
+        Partnering with us for community programs<br>
+        <strong>— Shashi Prabha Singh & Dimple Singh, Trustees & Founders</strong>
       </p>
     </div>
     <div class="about-image">
@@ -34,6 +48,10 @@
 
 <div class="contact-form">
   <h2>Contact Us</h2>
+  <p>
+    We would love to hear from you. Whether you have a question, want to volunteer, or are interested in partnering
+    with us, please reach out. Avtar Vision Trust
+  </p>
   <form (ngSubmit)="submitForm()" #form="ngForm">
     <input type="text" placeholder="Your Name" [(ngModel)]="name" name="name" required>
     <input type="email" placeholder="Your Email" [(ngModel)]="email" name="email" required>
