@@ -18,7 +18,7 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitForm() {
+  submitForm(): void {
     if (!this.name || !this.email || !this.message) {
       alert('Please fill all fields');
       return;

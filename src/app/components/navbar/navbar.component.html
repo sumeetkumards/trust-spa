@@ -1,11 +1,36 @@
 <header>
   <div class="logo">
-    <img src="assets/asset_16.png" alt="Trust Logo">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <img src="assets/avtar_logo3.jpeg" alt="Trust Logo">
+    </a>
   </div>
+
   <nav>
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <a routerLink="/about-us" routerLinkActive="active">About Us</a>
-    <a routerLink="/photos" routerLinkActive="active">Photos</a>
-    <a routerLink="/achievements" routerLinkActive="active">Achievements</a>
+    <ul class="menu">
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      </li>
+
+      <li>
+        <a routerLink="/about-us" routerLinkActive="active">
+          About Us <span class="arrow">▼</span>
+        </a>
+        <ul class="dropdown">
+          <li><a routerLink="/about/where-we-work">Our Mission</a></li>
+          <li><a routerLink="/about/how-we-work">Our Vision</a></li>
+          <li><a routerLink="/about/vision">Get Involved</a></li>
+          <li><a routerLink="/about/legal-status">Legal Status</a></li>
+          <li><a routerLink="/about/governing-board">Governing Board</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a routerLink="/photos" routerLinkActive="active">Photos</a>
+      </li>
+
+      <li>
+        <a routerLink="/achievements" routerLinkActive="active">Achievements</a>
+      </li>
+    </ul>
   </nav>
 </header>
