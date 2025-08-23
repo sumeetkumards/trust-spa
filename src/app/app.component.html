@@ -1,4 +1,4 @@
 <app-navbar></app-navbar>
-<main [@routeAnimations]="prepareRoute(outlet)">
+<main class="page-container" [@routeAnimations]="getRouteAnimationData(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
 </main>

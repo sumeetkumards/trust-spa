@@ -1,7 +1,8 @@
 <header>
   <div class="logo">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-      <img src="assets/avtar_logo3.jpeg" alt="Trust Logo">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" style="display: flex;">
+      <img src="assets/avtar_logo.jpeg" alt="Trust Logo">
+      <img src="assets/avtar_text.jpeg" id="logo-text" alt="Trust Logo Text">
     </a>
   </div>
 
@@ -13,13 +14,8 @@
 
       <li>
         <a routerLink="/about-us" routerLinkActive="active">
-          About Us <span class="arrow">▼</span>
+          About Us
         </a>
-        <ul class="dropdown">
-          <li><a routerLink="/about-us">Our Mission</a></li>
-          <li><a routerLink="/about-us">Our Vision</a></li>
-          <li><a routerLink="/about-us">Get Involved</a></li>
-        </ul>
       </li>
 
       <li>

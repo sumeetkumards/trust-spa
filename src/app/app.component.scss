@@ -1,5 +1,6 @@
 main {
   position: relative;
-  overflow: hidden;
+  flex: 1;
+  min-height: 100vh; // keeps layout stable
+  overflow: hidden; // prevents scrollbars during animation
 }
-
