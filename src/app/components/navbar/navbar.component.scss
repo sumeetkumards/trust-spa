@@ -1,13 +1,29 @@
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* logo left, nav right */
   align-items: center;
   padding: 14px 30px;
-  background: #fffaf6;
+  background: #fff;
+  border-bottom: 1px solid #eee;   /* thin border */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* light shadow */
+  position: sticky;  /* keeps navbar fixed on scroll */
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  height: 100px;
+  height: 60px;
+}
+
+#logo-text {
+  height: 30px;
+  margin-left: 8px;
+  align-self: center;
 }
 
 /* Menu wrapper */
@@ -27,7 +43,7 @@ nav ul {
 
 nav ul li {
   position: relative;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 nav ul li a {
@@ -36,12 +52,31 @@ nav ul li a {
   font-weight: 600;
   padding: 8px 12px;
   display: block;
+  position: relative;
+  transition: color 0.3s ease; /* smooth text color change */
+}
+
+/* Underline animation */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease; /* smooth underline expand */
 }
 
 /* Active & hover states */
 nav ul li a.active,
 nav ul li a:hover {
   color: var(--accent);
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+  width: 100%;
 }
 
 /* Dropdown styles */
@@ -80,23 +115,42 @@ nav ul li:hover > .dropdown {
 .cta-btn {
   background: var(--accent);
   color: #fff;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  margin-left: 25px;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #e85c00; /* darker accent on hover */
 }
 
 /* Mobile adjustments */
 @media (max-width: 700px) {
-  nav ul {
+  header {
     flex-direction: column;
     align-items: flex-start;
   }
 
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
   nav ul li {
     margin-left: 0;
+    width: 100%;
   }
 
   nav ul li a {
     margin-left: 12px;
+    width: 100%;
   }
 
   nav ul li .dropdown {
@@ -107,5 +161,9 @@ nav ul li:hover > .dropdown {
 
   nav ul li .dropdown li a {
     padding-left: 30px;
+  }
+
+  .cta-btn {
+    margin: 10px 0 0 12px;
   }
 }

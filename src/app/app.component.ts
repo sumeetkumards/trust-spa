@@ -14,23 +14,23 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    trigger('routeAnimations', [
+     trigger('routeAnimations', [
       transition('* <=> *', [
-        style({ position: 'relative' }),
+        // prepare both views
         query(':enter, :leave', [
-          style({
-            position: 'absolute',
-            width: '100%',
-            opacity: 0,
-          })
+          style({ position: 'absolute', width: '100%' })
         ], { optional: true }),
+
         group([
+          // old page out
           query(':leave', [
-            animate('400ms ease', style({ opacity: 0, transform: 'translateX(-50px)' }))
+            animate('220ms ease', style({ opacity: 0, transform: 'translateY(10px)' }))
           ], { optional: true }),
+
+          // new page in
           query(':enter', [
-            style({ transform: 'translateX(50px)', opacity: 0 }),
-            animate('400ms ease', style({ opacity: 1, transform: 'translateX(0)' }))
+            style({ opacity: 0, transform: 'translateY(-10px)' }),
+            animate('260ms 40ms ease', style({ opacity: 1, transform: 'none' }))
           ], { optional: true })
         ])
       ])
@@ -39,7 +39,7 @@ import {
 })
 export class AppComponent {
   title = 'trust-spa';
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet?.activatedRouteData?.['animation'];
+  getRouteAnimationData(outlet: any) {
+    return outlet?.activatedRouteData?.['animation'] ?? '';
   }
 }
