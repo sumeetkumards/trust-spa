@@ -1,8 +1,31 @@
 <section class="section">
-  <h2>Photos</h2>
-  <div class="gallery">
-    <div *ngFor="let img of images" class="tile">
-      <img [src]="img" alt="photo">
+  <h2>Gallery</h2>
+
+  <!-- Year Filter -->
+  <div class="filter-bar">
+    <label for="yearFilter">Filter by Year:</label>
+    <select [(ngModel)]="selectedYear">
+      <option value="all">All</option>
+      <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+  </div>
+
+  <!-- Event Blocks -->
+  <div *ngFor="let event of filteredEvents" class="event-block">
+    <h3>{{ event.year }} - {{ event.name }}</h3>
+
+    <div class="gallery">
+      <div *ngFor="let file of event.files" class="tile" (click)="openLightbox(file)">
+        <img [src]="file" [alt]="event.name">
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" *ngIf="selectedMedia" (click)="closeLightbox()">
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closeLightbox()">✖</button>
+      <img [src]="selectedMedia" alt="Preview">
     </div>
   </div>
 </section>

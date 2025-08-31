@@ -43,21 +43,6 @@
       <img src="assets/asset_8.png" alt="Helping children">
     </div>
   </div>
+  <a routerLink="/contact-us" class="cta-btn">Contact Us</a>
 </section>
 
-<div class="contact-form">
-  <h2>Contact Us</h2>
-  <p>
-    We would love to hear from you. Whether you have a question, want to volunteer, or are interested in partnering
-    with us, please reach out. Avtar Vision Trust
-  </p>
-  <form (ngSubmit)="submitForm()" #form="ngForm">
-    <input type="text" placeholder="Your Name" [(ngModel)]="name" name="name" required>
-    <input type="email" placeholder="Your Email" [(ngModel)]="email" name="email" required>
-    <textarea placeholder="Your Message" [(ngModel)]="message" name="message" required></textarea>
-    <button type="submit" [disabled]="isSubmitting">
-      {{ isSubmitting ? 'Sending...' : 'Send' }}
-    </button>
-  </form>
-  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
-</div>
