@@ -1,123 +1,122 @@
-.section.about-us {
+/* Contact Section */
+.contact-section {
   background-color: #fffaf6;
   padding: 4rem 8%;
-
-  .about-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-
-    .about-text {
-      flex: 1;
-      align-self: flex-start;
-      h2 {
-        font-family: 'Poppins', sans-serif;
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: #222;
-      }
-      ul {
-        list-style: none;
-      }
-      p {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #555;
-      }
-    }
-
-    .about-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-
-      img {
-        width: 100%;
-        max-width: 500px;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        transition: transform 0.5s ease;
-
-        &:hover {
-          transform: scale(1.03);
-        }
-      }
-    }
-  }
-
-  @media (max-width: 992px) {
-    .about-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
+  border-radius: 12px;
+  margin: 3rem auto;
+  max-width: 900px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-// Contact Form Styling
+/* Title */
+.contact-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #222;
+  text-align: center;
+}
+
+/* General Text */
+.contact-section p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Contact Details */
+.contact-details {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fdf8f4;
+  border-left: 4px solid #f36b2b;
+  border-radius: 8px;
+  max-width: 600px;
+}
+
+.contact-details p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.contact-details a {
+  color: #f36b2b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form (your existing styles) */
 .contact-form {
   background-color: #fdf8f4;
   padding: 3rem 8%;
   border-radius: 10px;
-  margin-top: 3rem;
+  margin-top: 2rem;
   text-align: center;
+}
 
-  h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #222;
-  }
+.contact-form form {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
-  form {
-    max-width: 500px;
-    margin: 0 auto;
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
 
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.3s ease;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #f36b2b;
+}
 
-      &:focus {
-        border-color: #f36b2b;
-      }
-    }
+.contact-form button {
+  background: linear-gradient(135deg, #f36b2b, #f8a93c);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    button {
-      background: linear-gradient(135deg, #f36b2b, #f8a93c);
-      color: white;
-      padding: 0.8rem 1.6rem;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(243, 107, 43, 0.3);
+}
 
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 15px rgba(243, 107, 43, 0.3);
-      }
+.contact-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
 
-      &:disabled {
-        background: #ccc;
-        cursor: not-allowed;
-      }
-    }
-  }
+.contact-form .success {
+  margin-top: 1rem;
+  color: #28a745;
+  font-weight: 600;
+}
 
-  .success {
-    margin-top: 1rem;
-    color: #28a745;
-    font-weight: 600;
-  }
+/* Follow Text */
+.contact-section .follow {
+  margin-top: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: #555;
 }
