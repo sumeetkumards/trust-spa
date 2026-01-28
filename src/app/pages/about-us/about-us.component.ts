@@ -18,7 +18,7 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitForm() {
+  submitForm(): void {
     if (!this.name || !this.email || !this.message) {
       alert('Please fill all fields');
       return;
@@ -31,7 +31,7 @@ export class AboutUsComponent implements OnInit {
       message: this.message
     };
 
-    this.http.post('https://script.google.com/macros/s/AKfycbwdNoPE6ZKb6x0HZCAzC8Cvcgc5gllLxtmG1HDuuxJzmt0HL1EDUrbnzB93SYq5hwrRQw/exec', formData)
+    this.http.post('https://script.google.com/macros/s/AKfycbx7JDUq0u8kbRl8sRBD1j3hrxkTSKIHDmABRSov7IFRSi60ca4vzYaAMIF26SpWDW-qBw/exec', formData)
       .subscribe({
         next: () => {
           this.successMessage = 'Thank you! Your enquiry has been submitted.';

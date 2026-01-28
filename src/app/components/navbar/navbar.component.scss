@@ -1,41 +1,169 @@
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* logo left, nav right */
   align-items: center;
   padding: 14px 30px;
-  background: #fffaf6;
+  background: #fff;
+  border-bottom: 1px solid #eee;   /* thin border */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* light shadow */
+  position: sticky;  /* keeps navbar fixed on scroll */
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  height: 42px
+  height: 60px;
 }
 
+#logo-text {
+  height: 30px;
+  margin-left: 8px;
+  align-self: center;
+}
+
+/* Menu wrapper */
 nav {
   display: flex;
-  align-items: center
+  align-items: center;
 }
 
-nav a {
-  margin-left: 20px;
+/* Main nav items */
+nav ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  position: relative;
+  margin-left: 25px;
+}
+
+nav ul li a {
   text-decoration: none;
   color: #333;
-  font-weight: 600
+  font-weight: 600;
+  padding: 8px 12px;
+  display: block;
+  position: relative;
+  transition: color 0.3s ease; /* smooth text color change */
 }
 
-nav a.active,
-nav a:hover {
-  color: var(--accent)
+/* Underline animation */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease; /* smooth underline expand */
 }
 
+/* Active & hover states */
+nav ul li a.active,
+nav ul li a:hover {
+  color: var(--accent);
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown styles */
+nav ul li .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 1000;
+}
+
+nav ul li .dropdown li {
+  margin: 0;
+}
+
+nav ul li .dropdown li a {
+  padding: 10px 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+nav ul li .dropdown li a:hover {
+  background: #f4f4f4;
+  color: var(--accent);
+}
+
+/* Show dropdown on hover */
+nav ul li:hover > .dropdown {
+  display: block;
+}
+
+/* CTA button */
 .cta-btn {
   background: var(--accent);
   color: #fff;
-  padding: 8px 16px;
-  border-radius: 20px
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  margin-left: 25px;
+  transition: background 0.3s ease;
 }
 
-@media(max-width:700px) {
-  nav a {
-    margin-left: 12px
+.cta-btn:hover {
+  background: #e85c00; /* darker accent on hover */
+}
+
+/* Mobile adjustments */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  nav ul li a {
+    margin-left: 12px;
+    width: 100%;
+  }
+
+  nav ul li .dropdown {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  nav ul li .dropdown li a {
+    padding-left: 30px;
+  }
+
+  .cta-btn {
+    margin: 10px 0 0 12px;
   }
 }
